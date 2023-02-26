@@ -52,7 +52,41 @@ ThemeData getApplicationTheme() {
       caption: getRegularStyle(color: ColorManager.grey1),
       bodyText1: getRegularStyle(color: ColorManager.gery),
     ),
-
     /* Input Decoration Theme */
+    inputDecorationTheme: InputDecorationTheme(
+      // Content Padding
+      contentPadding: const EdgeInsets.all(AppPadding.p8),
+      // Hint Style
+      hintStyle:
+          getRegularStyle(color: ColorManager.gery, fontSize: FontSize.s14),
+      // Label Style
+      labelStyle:
+          getMediumStyle(color: ColorManager.gery, fontSize: FontSize.s14),
+      // Error Style
+      errorStyle: getRegularStyle(color: ColorManager.error),
+
+      // Enabled Border Style
+      enabledBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+          borderRadius: BorderRadius.circular(AppSize.s8)),
+
+      // Focus Border Style
+      focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorManager.gery, width: AppSize.s1_5),
+          borderRadius: BorderRadius.circular(AppSize.s8)),
+
+      // Error Border Style
+      errorBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.error, width: AppSize.s1_5),
+          borderRadius: BorderRadius.circular(AppSize.s8)),
+
+      // Focus Error Border Style
+      focusedErrorBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+          borderRadius: BorderRadius.circular(AppSize.s8)),
+    ),
   );
 }
