@@ -12,7 +12,7 @@ TextStyle _getTextStyleWidget(
   ( Used The TrstStyle Base (_getTextStyleWidget) Method )
 */
 TextStyle getLightStyle(
-    {double fontSize = FontSizeManager.s12,
+    {double fontSize = FontSize.s12,
     FontWeight fontWeight = FontWeightManager.light,
     required Color color}) {
   return _getTextStyleWidget(fontSize, fontWeight, color);
@@ -23,7 +23,7 @@ TextStyle getLightStyle(
   ( Used The TrstStyle Base (_getTextStyleWidget) Method )
 */
 TextStyle getRegularStyle(
-    {double fontSize = FontSizeManager.s12,
+    {double fontSize = FontSize.s12,
     FontWeight fontWeight = FontWeightManager.regular,
     required Color color}) {
   return _getTextStyleWidget(fontSize, fontWeight, color);
@@ -34,7 +34,7 @@ TextStyle getRegularStyle(
   ( Used The TrstStyle Base (_getTextStyleWidget) Method )
 */
 TextStyle getMediumStyle(
-    {double fontSize = FontSizeManager.s12,
+    {double fontSize = FontSize.s12,
     FontWeight fontWeight = FontWeightManager.medium,
     required Color color}) {
   return _getTextStyleWidget(fontSize, fontWeight, color);
@@ -45,7 +45,7 @@ TextStyle getMediumStyle(
   ( Used The TrstStyle Base (_getTextStyleWidget) Method )
 */
 TextStyle getSemiBoldStyle(
-    {double fontSize = FontSizeManager.s12,
+    {double fontSize = FontSize.s12,
     FontWeight fontWeight = FontWeightManager.semiBold,
     required Color color}) {
   return _getTextStyleWidget(fontSize, fontWeight, color);
@@ -56,7 +56,7 @@ TextStyle getSemiBoldStyle(
   ( Used The TrstStyle Base (_getTextStyleWidget) Method )
 */
 TextStyle getBoldStyle(
-    {double fontSize = FontSizeManager.s12,
+    {double fontSize = FontSize.s12,
     FontWeight fontWeight = FontWeightManager.bold,
     required Color color}) {
   return _getTextStyleWidget(fontSize, fontWeight, color);
