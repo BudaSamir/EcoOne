@@ -1,4 +1,4 @@
-import 'package:eco_one/presentation/fonts_manager.dart';
+import 'package:eco_one/presentation/resources/fonts_manager.dart';
 import 'package:flutter/material.dart';
 
 // Created Method Return TextStyle Widget (TextStyle base)

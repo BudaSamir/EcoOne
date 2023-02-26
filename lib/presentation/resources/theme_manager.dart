@@ -1,7 +1,7 @@
-import 'package:eco_one/presentation/color_manager.dart';
-import 'package:eco_one/presentation/fonts_manager.dart';
-import 'package:eco_one/presentation/styles_manager.dart';
-import 'package:eco_one/presentation/values_manager.dart';
+import 'package:eco_one/presentation/resources/color_manager.dart';
+import 'package:eco_one/presentation/resources/fonts_manager.dart';
+import 'package:eco_one/presentation/resources/styles_manager.dart';
+import 'package:eco_one/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getApplicationTheme() {
