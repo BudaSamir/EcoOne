@@ -4,6 +4,7 @@ import 'package:eco_one/presentation/forgot_password/forgot_password_view.dart';
 import 'package:eco_one/presentation/login/login_view.dart';
 import 'package:eco_one/presentation/main/main_view.dart';
 import 'package:eco_one/presentation/register/register_view.dart';
+import 'package:eco_one/presentation/resources/strings_manager.dart';
 import 'package:eco_one/presentation/splash/splash_view.dart';
 import 'package:eco_one/presentation/store_deteils/store_details_view.dart';
 import 'package:flutter/material.dart';
@@ -42,10 +43,10 @@ class RouteGenerator {
     return MaterialPageRoute(
         builder: (_) => Scaffold(
               appBar: AppBar(
-                title: const Text("No Route Found"),
+                title: const Text(AppStrings.noRoutFound),
               ),
               body: Center(
-                child: const Text("No Route Found"),
+                child: const Text(AppStrings.noRoutFound),
               ),
             ));
   }
