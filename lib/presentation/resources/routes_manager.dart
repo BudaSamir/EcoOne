@@ -9,7 +9,7 @@ import 'package:eco_one/presentation/splash/splash_view.dart';
 import 'package:eco_one/presentation/store_deteils/store_details_view.dart';
 import 'package:flutter/material.dart';
 
-class Roustes {
+class Routes {
   static const String splashRoute = "/";
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
@@ -22,17 +22,17 @@ class RouteGenerator {
   // Method to Return The Selected Route
   static Route<dynamic> getRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Roustes.splashRoute:
+      case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
-      case Roustes.loginRoute:
+      case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
-      case Roustes.registerRoute:
+      case Routes.registerRoute:
         return MaterialPageRoute(builder: (_) => const RegisterView());
-      case Roustes.forgotPasswordRoute:
+      case Routes.forgotPasswordRoute:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
-      case Roustes.mainRoute:
+      case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => const MainView());
-      case Roustes.storeDetailRoute:
+      case Routes.storeDetailRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
       default:
         return unDefinedRoute();
