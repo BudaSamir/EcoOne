@@ -1,6 +1,7 @@
 import 'package:eco_one/presentation/resources/assets_manager.dart';
 import 'package:eco_one/presentation/resources/color_manager.dart';
 import 'package:eco_one/presentation/resources/strings_manager.dart';
+import 'package:eco_one/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -53,6 +54,36 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           itemBuilder: ((context, index) {
             return Container();
           })),
+    );
+  }
+}
+
+class OnBoarding extends StatelessWidget {
+  final SliderInstance _sliderInstance;
+  const OnBoarding(this._sliderInstance, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const SizedBox(height: AppSize.s40),
+        Padding(
+            padding: const EdgeInsets.all(AppPadding.p8),
+            child: Text(
+              _sliderInstance.title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headlineLarge,
+            )),
+        Padding(
+            padding: const EdgeInsets.all(AppPadding.p8),
+            child: Text(
+              _sliderInstance.subTitle,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleMedium,
+            )),
+        const SizedBox(height: AppSize.s40),
+      ],
     );
   }
 }
