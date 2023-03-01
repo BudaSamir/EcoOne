@@ -3,6 +3,7 @@
 import 'package:eco_one/presentation/forgot_password/forgot_password_view.dart';
 import 'package:eco_one/presentation/login/login_view.dart';
 import 'package:eco_one/presentation/main/main_view.dart';
+import 'package:eco_one/presentation/onboarding/onboarding_view.dart';
 import 'package:eco_one/presentation/register/register_view.dart';
 import 'package:eco_one/presentation/resources/strings_manager.dart';
 import 'package:eco_one/presentation/splash/splash_view.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static const String splashRoute = "/";
+  static const String onBoardingRoute = "/onBoarding";
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
   static const String forgotPasswordRoute = "/forgotPassword";
@@ -24,6 +26,8 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) => const OnBoardingView());
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerRoute:
