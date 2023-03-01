@@ -4,6 +4,7 @@ import 'package:eco_one/presentation/resources/strings_manager.dart';
 import 'package:eco_one/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({super.key});
@@ -40,9 +41,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       backgroundColor: ColorManager.white,
       appBar: AppBar(
           // Phone Status Bar Style while App Running
+          backgroundColor: ColorManager.white,
+          elevation: AppSize.s0,
           systemOverlayStyle: SystemUiOverlayStyle(
               statusBarColor: ColorManager.white,
-              statusBarBrightness: Brightness.dark)),
+              statusBarBrightness: Brightness.dark,
+              statusBarIconBrightness: Brightness.dark)),
       body: PageView.builder(
           controller: _pageController,
           itemCount: _list.length,
@@ -52,8 +56,25 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             });
           },
           itemBuilder: ((context, index) {
-            return Container();
+            return OnBoarding(_list[index]);
           })),
+      bottomSheet: Container(
+        color: ColorManager.white,
+        height: AppSize.s100,
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    AppStrings.skip,
+                    textAlign: TextAlign.end,
+                  )),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
@@ -83,6 +104,7 @@ class OnBoarding extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             )),
         const SizedBox(height: AppSize.s40),
+        SvgPicture.asset(_sliderInstance.image)
       ],
     );
   }

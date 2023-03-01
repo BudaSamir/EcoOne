@@ -13,4 +13,5 @@ class AppStrings {
       "EcoOne App is An Aweasome Flutter App Using Clean Architecture #3";
   static const onBoardingSubTitle4 =
       "EcoOne App is An Aweasome Flutter App Using Clean Architecture #4";
+  static const skip = "Skip";
 }
