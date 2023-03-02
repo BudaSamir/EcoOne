@@ -1,5 +1,7 @@
 import 'package:eco_one/presentation/resources/assets_manager.dart';
 import 'package:eco_one/presentation/resources/color_manager.dart';
+import 'package:eco_one/presentation/resources/constants_manager.dart';
+import 'package:eco_one/presentation/resources/routes_manager.dart';
 import 'package:eco_one/presentation/resources/strings_manager.dart';
 import 'package:eco_one/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
@@ -60,13 +62,15 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           })),
       bottomSheet: Container(
         color: ColorManager.white,
-        height: AppSize.s100,
+        height: AppSize.s110,
         child: Column(
           children: [
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, Routes.loginRoute);
+                  },
                   child: const Text(
                     AppStrings.skip,
                     textAlign: TextAlign.end,
@@ -86,8 +90,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.all(AppPadding.p14),
+            padding: const EdgeInsets.all(AppPadding.p20),
             child: GestureDetector(
+              onTap: (() {
+                _pageController.animateToPage(_getPreviousPage(),
+                    duration: const Duration(
+                        milliseconds: AppConstants.sliderDuration),
+                    curve: Curves.bounceInOut);
+              }),
               child: SizedBox(
                 height: AppSize.s20,
                 width: AppSize.s20,
@@ -105,8 +115,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(AppPadding.p14),
+            padding: const EdgeInsets.all(AppPadding.p20),
             child: GestureDetector(
+              onTap: (() {
+                _pageController.animateToPage(_getNextPage(),
+                    duration: const Duration(
+                        milliseconds: AppConstants.sliderDuration),
+                    curve: Curves.bounceInOut);
+              }),
               child: SizedBox(
                 height: AppSize.s20,
                 width: AppSize.s20,
@@ -117,6 +133,22 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         ],
       ),
     );
+  }
+
+  int _getPreviousPage() {
+    int previousPage = _currentIndex--;
+    if (previousPage == -1) {
+      previousPage = _list.length - 1;
+    }
+    return previousPage;
+  }
+
+  int _getNextPage() {
+    int nextPage = _currentIndex++;
+    if (nextPage == _list.length) {
+      nextPage = 0;
+    }
+    return nextPage;
   }
 
   Widget _getProperCircle(int page) {
