@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Eco One</string>
+    <color name="primary">#ED9728</color>
 </resources>

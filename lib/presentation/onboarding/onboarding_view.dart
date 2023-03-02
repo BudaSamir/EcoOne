@@ -67,15 +67,64 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               alignment: Alignment.centerRight,
               child: TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     AppStrings.skip,
                     textAlign: TextAlign.end,
                   )),
-            )
+            ),
+            _getBottomSheetWidget()
           ],
         ),
       ),
     );
+  }
+
+  Widget _getBottomSheetWidget() {
+    return Container(
+      color: ColorManager.primary,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(AppPadding.p14),
+            child: GestureDetector(
+              child: SizedBox(
+                height: AppSize.s20,
+                width: AppSize.s20,
+                child: SvgPicture.asset(ImageAssets.leftArrowIcon),
+              ),
+            ),
+          ),
+          Row(
+            children: [
+              for (int i = 0; i < _list.length; i++)
+                Padding(
+                  padding: const EdgeInsets.all(AppPadding.p8),
+                  child: _getProperCircle(i),
+                )
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(AppPadding.p14),
+            child: GestureDetector(
+              child: SizedBox(
+                height: AppSize.s20,
+                width: AppSize.s20,
+                child: SvgPicture.asset(ImageAssets.rightArrowIcon),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _getProperCircle(int page) {
+    if (page == _currentIndex) {
+      return SvgPicture.asset(ImageAssets.hollowCirlceIcon);
+    } else {
+      return SvgPicture.asset(ImageAssets.solidCirlceIcon);
+    }
   }
 }
 
