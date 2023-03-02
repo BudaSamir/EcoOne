@@ -62,8 +62,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           })),
       bottomSheet: Container(
         color: ColorManager.white,
-        height: AppSize.s110,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Align(
               alignment: Alignment.centerRight,
@@ -71,8 +71,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, Routes.loginRoute);
                   },
-                  child: const Text(
+                  child: Text(
                     AppStrings.skip,
+                    style: Theme.of(context).textTheme.titleLarge,
                     textAlign: TextAlign.end,
                   )),
             ),
@@ -136,7 +137,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 
   int _getPreviousPage() {
-    int previousPage = _currentIndex--;
+    int previousPage = --_currentIndex;
     if (previousPage == -1) {
       previousPage = _list.length - 1;
     }
@@ -144,7 +145,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 
   int _getNextPage() {
-    int nextPage = _currentIndex++;
+    int nextPage = ++_currentIndex;
     if (nextPage == _list.length) {
       nextPage = 0;
     }
