@@ -300,7 +300,7 @@ packages:
     source: hosted
     version: "4.8.0"
   json_serializable:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: json_serializable
       sha256: dadc08bd61f72559f938dd08ec20dbfec6c709bba83515085ea943d2078d187a
@@ -428,13 +428,13 @@ packages:
     source: hosted
     version: "4.0.1"
   retrofit_generator:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: retrofit_generator
-      sha256: "5289b5cfc73ba123e238b9d3348a143fcb7f9d93c821525868f8dc3bb497c499"
+      sha256: "57d54e791ec73920cb80afe376ab7129b40214ecf609714efb8caa421c62d068"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0+1"
+    version: "6.0.0"
   shelf:
     dependency: transitive
     description:
