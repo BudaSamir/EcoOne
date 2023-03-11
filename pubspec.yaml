@@ -42,6 +42,7 @@ dependencies:
   analyzer: ^5.7.1
   dio: ^5.0.1
   retrofit_generator: ^6.0.0
+  dartz: ^0.10.1
 
 
 
