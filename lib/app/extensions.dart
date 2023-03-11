@@ -9,13 +9,11 @@ extension NonNullString on String? {
 }
 
 extension NonNullInt on int?{
-
   int orZero(){
     if (this == null){
       return 0;
     } else {
       return this!;
     }
-
   }
 }
